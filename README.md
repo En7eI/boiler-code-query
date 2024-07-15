@@ -32,6 +32,11 @@
 $ npm install
 ```
 
+## Configuration
+
+create .env file
+add env for prisma -> DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
+
 ## Running the app
 
 ```bash
