@@ -4,5 +4,7 @@ services:
     build: .
     ports:
       - "3000:3000"
+    volumes:
+      - ./src:/app/src  # Mount your local source code directory into the container
     environment:
-      NODE_ENV: production
+      NODE_ENV: development  # Set NODE_ENV to development for development purposes
