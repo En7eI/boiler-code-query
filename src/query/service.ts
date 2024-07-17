@@ -1,6 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/service';
 import { ElasticsearchService } from '@nestjs/elasticsearch';
+import { ModelName } from '../prisma/type';
+
 
 @Injectable()
 export class QueryService {
@@ -9,8 +11,8 @@ export class QueryService {
     private readonly elasticsearchService: ElasticsearchService,
   ) {}
 
-  async findWithPrisma(model: any, query: any) {
-    return this.prisma[model].findMany({
+  async findWithPrisma(model: ModelName, query: any) {
+    return (this.prisma[model] as any).findMany({
       where: query,
     });
   }

@@ -1,6 +1,7 @@
 import { Controller, Get, Param } from '@nestjs/common';
-import { QueryService } from './service';
+import { QueryService } from '../query/service';
 import { QueryParams } from '../decorators/query.decorator';
+import { ModelName } from '../prisma/type'
 
 @Controller('dynamic')
 export class DynamicController {
@@ -8,17 +9,17 @@ export class DynamicController {
 
   @Get('prisma/:model')
   async getWithPrisma(
-    @QueryParams() queryParams, 
-    @Param('model') model,
+    @QueryParams() queryParams,
+    @Param('model') model: string,
   ) {
-    return this.queryService.findWithPrisma(model, queryParams);
-  };
+    return this.queryService.findWithPrisma(model as ModelName, queryParams);
+  }
 
   @Get('elasticsearch/:index')
   async searchWithElasticsearch(
-    @Param('index') index,
     @QueryParams() queryParams,
+    @Param('index') index: string,
   ) {
     return this.queryService.searchWithElasticsearch(index, queryParams);
-  };
+  }
 }
