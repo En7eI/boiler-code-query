@@ -69,6 +69,6 @@ export class QueryService {
       data: updateItemDto,
     });
 
-    return result;
+    return result; 
   }
 }
