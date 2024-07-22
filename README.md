@@ -2,18 +2,18 @@
 
 Build dynamic queries with prisma and elastic search:
 - Usage:
-    Use the end points to pass parameter for building dynamic queries with prisma then search and sort with elastic search.
+  - Use the end points to pass parameter for building dynamic queries with prisma then search and sort with elastic search.
 - End points:
-  ~ GET prisma/:model
-  ~ GET elasticsearch/:index
-  ~ POST prisma/:model
-  ~ PUT prisma/:model/:id
+  - GET prisma/:model
+  - GET elasticsearch/:index
+  - POST prisma/:model
+  - PUT prisma/:model/:id
 - Structure:
-  ~ Decorators for create, update and query (src/decorators/)
-  ~ DTO objects for create, update and query (src/dto)
-  ~ Prisma service for db operations (src/prisma/)
-  ~ Dynamic controller for endpoints (src/query/controller.ts)
-  ~ Query service for db operations through prisma and search with elastic (src/query/service.ts)
+  - Decorators for create, update and query (src/decorators/)
+  - DTO objects for create, update and query (src/dto)
+  - Prisma service for db operations (src/prisma/)
+  - Dynamic controller for endpoints (src/query/controller.ts)
+  - Query service for db operations through prisma and search with elastic (src/query/service.ts)
 
 ## Installation
 
