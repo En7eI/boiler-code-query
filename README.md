@@ -1,6 +1,20 @@
 ## Description
 
-Build dynamic queries with prisma and elastic search
+Build dynamic queries with prisma and elastic search:
+- Usage:
+    Use the end points to pass parameter for building dynamic queries with prisma then search and sort with elastic search.
+- End points:
+  ~ GET prisma/:model
+  ~ GET elasticsearch/:index
+  ~ POST prisma/:model
+  ~ PUT prisma/:model/:id
+- Structure:
+  ~ Decorators for create, update and query (src/decorators/)
+  ~ DTO objects for create, update and query (src/dto)
+  ~ Prisma service for db operations (src/prisma/)
+  ~ Dynamic controller for endpoints (src/query/controller.ts)
+  ~ Query service for db operations through prisma and search with elastic (src/query/service.ts)
+
 ## Installation
 
 ```bash
@@ -37,17 +51,3 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
