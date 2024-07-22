@@ -2,13 +2,13 @@ import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 import { plainToInstance } from 'class-transformer';
 import { validateSync } from 'class-validator';
 
-export const QueryParams = createParamDecorator(
+export const CreateItem = createParamDecorator(
   (value: any, ctx: ExecutionContext) => {
     const request = ctx.switchToHttp().getRequest();
-    const query = request.query;
+    const body = request.body;
 
-    // Transform query params to DTO instance
-    const dto = plainToInstance(value, query, { excludeExtraneousValues: true });
+    // Transform body to DTO instance
+    const dto = plainToInstance(value, body, { excludeExtraneousValues: true });
 
     // Validate the DTO instance
     const errors = validateSync(dto, { whitelist: true, forbidNonWhitelisted: true });
